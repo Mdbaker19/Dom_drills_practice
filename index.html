@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>View</title>
+    <style>
+        body{
+            background-color: #272626;
+            color: aliceblue;
+        }
+        label{
+            color: aliceblue;
+        }
+        input{
+            border-radius: 10px;
+        }
+        #main{
+            padding: 5vh 25vw;
+        }
+        button:hover{
+            background-color: aliceblue;
+            color: black;
+            cursor: pointer;
+        }
+        #cardBody{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .numCard{
+            width: 4vw;
+            border-radius: 5px;
+            border: 2px solid aliceblue;
+            margin: 3vmin;
+            text-align: center;
+        }
+        .clicked{
+            color: black;
+        }
+        .numCard:hover{
+            cursor: pointer;
+            background-color: #cdb393;
+            color: #242121;
+        }
+        #opH1{
+            margin: 3vmin 46vw;
+        }
+        .op{
+           font-size: 2rem;
+            border: 4px solid darkgoldenrod;
+            background-color: black;
+            color: aliceblue;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+<div id="main">
+<h1>Choices: </h1>
+    <h2><span id="choices"></span></h2>
+    <button id="test">Answer</button>
+    <p>Need 2 correct: so far: <span id="count"></span></p>
+    <p id="rightWrong"></p>
+</div>
+<hr>
+<button id="start">Generate Numbers</button>
+<h1 id="ran"> </h1>
+<div id="ops"></div>
+<section id="cardBody">
+
+</section>
+<script src="jQ.js"></script>
+<script src="answers/answers_1/answers_2/index.js"></script>
+</body>
+</html>
