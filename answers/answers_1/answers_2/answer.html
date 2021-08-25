@@ -5,9 +5,54 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>You made it</title>
+    <title>Test</title>
+    <style>
+        div{
+            width: 298px;
+            height: 298px;
+            border: 1px solid aliceblue;
+        }
+        #wrapper{
+            display: flex;
+            flex-wrap: wrap;
+            width: 600px;
+            height: 600px;
+        }
+        body{
+            color: aliceblue;
+            background-color: #272626;
+        }
+    </style>
 </head>
 <body>
-<h1>Next page</h1>
+<h1> When these boxes are hovered over, each gets a new random color</h1>
+<div id="wrapper">
+    <div class="hoverBox"></div>
+    <div class="hoverBox"></div>
+    <div class="hoverBox"></div>
+    <div class="hoverBox"></div>
+</div>
+<script>
+
+    (() => {
+        Array.from(document.getElementsByClassName("hoverBox")).forEach(ele =>{
+            ele.addEventListener("mouseover", (e) => {
+                e.path[0].style.backgroundColor = genRanColor();
+            });
+        });
+
+        function genRanColor() {
+            let colorStr = "rgb(";
+            for(let i = 0; i < 3; i++) {
+                let ran = ~~(Math.random() * 256);
+                colorStr+=ran + ", ";
+            }
+            return colorStr.substring(0, colorStr.length - 2) + ")";
+        }
+
+    })();
+
+
+</script>
 </body>
 </html>
