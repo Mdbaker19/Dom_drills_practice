@@ -35,18 +35,26 @@
 <script>
 
     (() => {
+        // event listener added to each individual box element
+        // array from the html collection that returns from a get by class name selection
         Array.from(document.getElementsByClassName("hoverBox")).forEach(ele =>{
             ele.addEventListener("mouseover", (e) => {
+                // unusual referance, the e.path[0] but it was what i found by traversing
+                // the 'e' object in the console, set the background to the return value of the ran color fn
                 e.path[0].style.backgroundColor = genRanColor();
             });
         });
 
+        // generate a random color string as an rgb(xxx, xxx, xxx)
         function genRanColor() {
+            // starting value that is the same every time
             let colorStr = "rgb(";
             for(let i = 0; i < 3; i++) {
+                // new ran num each time and add the ' ,' to it
                 let ran = ~~(Math.random() * 256);
                 colorStr+=ran + ", ";
             }
+            // remove the last space and , and close the rgb string with the ')'
             return colorStr.substring(0, colorStr.length - 2) + ")";
         }
 
